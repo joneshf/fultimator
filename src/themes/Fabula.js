@@ -7,6 +7,7 @@ const Fabula = createTheme({
     },
     secondary: {
       main: "#85C3B1",
+      light: "#e9f3ea",
     },
     ternary: {
       main: "#e9f3ea",

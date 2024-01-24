@@ -18,6 +18,7 @@ import Diamond from "../../../components/Diamond";
 
 import { Download, Code } from "@mui/icons-material";
 import EditableImage from "../../../components/EditableImage";
+import PrettyWeaponTemplate from "../../../components/equip/PrettyWeaponTemplate";
 import useDownloadImage from "../../../hooks/useDownloadImage";
 import useDownloadJSON from "../../../hooks/useDownloadJSON";
 
@@ -33,6 +34,8 @@ function Pretty({ base, custom }) {
           <ArrowDownward />
         </Typography>
         <PrettySingle weapon={custom} showActions />
+
+        <PrettyWeaponTemplate data={custom} />
       </div>
     </ThemeProvider>
   );
@@ -47,7 +50,7 @@ function PrettySingle({ weapon, showActions }) {
   const ref = useRef();
   const [downloadImage] = useDownloadImage(weapon.name, ref);
   const [downloadJSON] = useDownloadJSON(weapon.name, weapon);
-  
+
   return (
     <>
       <Card>

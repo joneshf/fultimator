@@ -1,7 +1,22 @@
-export function PhysicalIcon({ disabled }) {
+export function DiamondIcon({color}) {
+  return <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 100 100"
+    width="0.5em"
+    style={{verticalAlign: "middle", margin: "0 5px"}}
+  >
+    <g>
+      <path
+        d="M 0 50 L 50 100 L 100 50 L 50 0 L 0 50"
+        fill={color}></path>
+    </g>
+  </svg>
+}
+
+export function PhysicalIcon({disabled}) {
   const color = disabled ? "#d8d7d7" : "#d8d7d7";
   const strokeWidth = disabled ? "0" : "100";
-
+  
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -24,10 +39,10 @@ t95.5 153.5q-78 -42 -153.5 -96t-139.5 -116v0z"
   );
 }
 
-export function WindIcon({ disabled }) {
+export function WindIcon({disabled}) {
   const color = disabled ? "#d8d7d7" : "#bade15";
   const strokeWidth = disabled ? "0" : "100";
-
+  
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -49,10 +64,10 @@ t43 533.5q125 -265 -105.5 -489.5t-555.5 -239.5q419 91 558.5 397.5t-169.5 469.5q-
   );
 }
 
-export function BoltIcon({ disabled }) {
+export function BoltIcon({disabled}) {
   const color = disabled ? "#d8d7d7" : "#fff423";
   const strokeWidth = disabled ? "0" : "100";
-
+  
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +77,7 @@ export function BoltIcon({ disabled }) {
       stroke="#000000"
       strokeWidth={strokeWidth}
       paintOrder="stroke markers fill"
-      style={{ verticalAlign: "text-bottom" }}
+      style={{verticalAlign: "text-bottom"}}
     >
       <g transform="matrix(1 0 0 -1 0 1024)">
         <path
@@ -74,10 +89,10 @@ export function BoltIcon({ disabled }) {
   );
 }
 
-export function DarkIcon({ disabled }) {
+export function DarkIcon({disabled}) {
   const color = disabled ? "#d8d7d7" : "#ed153e";
   const strokeWidth = disabled ? "0" : "100";
-
+  
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +102,7 @@ export function DarkIcon({ disabled }) {
       stroke="#000000"
       strokeWidth={strokeWidth}
       paintOrder="stroke markers fill"
-      style={{ verticalAlign: "text-bottom" }}
+      style={{verticalAlign: "text-bottom"}}
     >
       <g transform="matrix(1 0 0 -1 0 800)">
         <path
@@ -101,10 +116,10 @@ t-68.5 -33.5zM508 15q-24 0 -35 14q-7 7 -7 19q0 18 14 36.5t27 18.5q14 0 25.5 -20t
   );
 }
 
-export function EarthIcon({ disabled }) {
+export function EarthIcon({disabled}) {
   const color = disabled ? "#d8d7d7" : "#cc8d2e";
   const strokeWidth = disabled ? "0" : "100";
-
+  
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -114,7 +129,7 @@ export function EarthIcon({ disabled }) {
       stroke="#000000"
       strokeWidth={strokeWidth}
       paintOrder="stroke markers fill"
-      style={{ verticalAlign: "text-bottom" }}
+      style={{verticalAlign: "text-bottom"}}
     >
       <g transform="matrix(1 0 0 -1 0 1024)">
         <path
@@ -127,10 +142,10 @@ q20 -21 153 -167l154 -168l-13 144l-294 191v0z"
   );
 }
 
-export function FireIcon({ disabled }) {
+export function FireIcon({disabled}) {
   const color = disabled ? "#d8d7d7" : "#f79010";
   const strokeWidth = disabled ? "0" : "100";
-
+  
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -140,7 +155,7 @@ export function FireIcon({ disabled }) {
       stroke="#000000"
       strokeWidth={strokeWidth}
       paintOrder="stroke markers fill"
-      style={{ verticalAlign: "text-bottom" }}
+      style={{verticalAlign: "text-bottom"}}
     >
       <g transform="matrix(1 0 0 -1 0 1024)">
         <path
@@ -155,10 +170,10 @@ t-153.5 89.5v0z"
   );
 }
 
-export function IceIcon({ disabled }) {
+export function IceIcon({disabled}) {
   const color = disabled ? "#d8d7d7" : "#b3e7fb";
   const strokeWidth = disabled ? "0" : "100";
-
+  
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -168,7 +183,7 @@ export function IceIcon({ disabled }) {
       stroke="#000000"
       strokeWidth={strokeWidth}
       paintOrder="stroke markers fill"
-      style={{ verticalAlign: "text-bottom" }}
+      style={{verticalAlign: "text-bottom"}}
     >
       <g transform="matrix(1 0 0 -1 0 1024)">
         <path
@@ -182,10 +197,10 @@ l47 -11v-145l-47 -11l-127 83v0v0zM557 587q0 9 -4 76l-5 76l34 36l125 -72l-14 -47l
   );
 }
 
-export function LightIcon({ disabled }) {
+export function LightIcon({disabled}) {
   const color = disabled ? "#d8d7d7" : "#fffa99";
   const strokeWidth = disabled ? "0" : "100";
-
+  
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -195,7 +210,7 @@ export function LightIcon({ disabled }) {
       stroke="#000000"
       strokeWidth={strokeWidth}
       paintOrder="stroke markers fill"
-      style={{ verticalAlign: "text-bottom" }}
+      style={{verticalAlign: "text-bottom"}}
     >
       <g transform="matrix(1 0 0 -1 0 1024)">
         <path
@@ -208,10 +223,10 @@ q14 31 18 67l182 56l-187 15q-7 32 -23 60l367 189v175l-395 -326q-17 20 -38 34l33 
   );
 }
 
-export function PoisonIcon({ disabled }) {
+export function PoisonIcon({disabled}) {
   const color = disabled ? "#d8d7d7" : "#d757a1";
   const strokeWidth = disabled ? "0" : "100";
-
+  
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -221,7 +236,7 @@ export function PoisonIcon({ disabled }) {
       stroke="#000000"
       strokeWidth={strokeWidth}
       paintOrder="stroke markers fill"
-      style={{ verticalAlign: "text-bottom" }}
+      style={{verticalAlign: "text-bottom"}}
     >
       <g transform="matrix(1 0 0 -1 0 800)">
         <path
@@ -284,7 +299,7 @@ export function SpellIcon() {
       version="1.1"
       viewBox="-10 0 1059 1059"
       width="1.2em"
-      style={{ verticalAlign: "text-bottom" }}
+      style={{verticalAlign: "text-bottom"}}
     >
       <g transform="matrix(1 0 0 -1 0 800)">
         <path
@@ -307,7 +322,7 @@ export function OffensiveSpellIcon() {
       stroke="#000000"
       strokeWidth={100}
       paintOrder="stroke markers fill"
-      style={{ verticalAlign: "text-bottom" }}
+      style={{verticalAlign: "text-bottom"}}
     >
       <g transform="matrix(1 0 0 -1 0 1000)">
         <path
@@ -327,7 +342,7 @@ export function D4Icon() {
         version="1.1"
         width="1.2em"
         viewBox="0 0 24 24"
-        style={{ verticalAlign: "text-bottom" }}
+        style={{verticalAlign: "text-bottom"}}
       >
         <path
           fill="currentcolor"
@@ -345,7 +360,7 @@ export function D6Icon() {
       version="1.1"
       width="1.2em"
       viewBox="0 0 24 24"
-      style={{ verticalAlign: "text-bottom" }}
+      style={{verticalAlign: "text-bottom"}}
     >
       <path
         fill="currentcolor"
@@ -362,7 +377,7 @@ export function D8Icon() {
       version="1.1"
       width="1.2em"
       viewBox="0 0 24 24"
-      style={{ verticalAlign: "text-bottom" }}
+      style={{verticalAlign: "text-bottom"}}
     >
       <path
         fill="currentcolor"
@@ -379,7 +394,7 @@ export function D10Icon() {
       version="1.1"
       width="1.2em"
       viewBox="0 0 24 24"
-      style={{ verticalAlign: "text-bottom" }}
+      style={{verticalAlign: "text-bottom"}}
     >
       <path
         fill="currentcolor"
@@ -396,7 +411,7 @@ export function D12Icon() {
       version="1.1"
       width="1.2em"
       viewBox="0 0 24 24"
-      style={{ verticalAlign: "text-bottom" }}
+      style={{verticalAlign: "text-bottom"}}
     >
       <path
         fill="currentcolor"
@@ -413,7 +428,7 @@ export function D20Icon() {
       version="1.1"
       width="1.2em"
       viewBox="0 0 24 24"
-      style={{ verticalAlign: "text-bottom" }}
+      style={{verticalAlign: "text-bottom"}}
     >
       <path
         fill="currentcolor"
@@ -433,7 +448,7 @@ export function ActionIcon() {
       stroke="#000000"
       // strokeWidth={100}
       paintOrder="stroke markers fill"
-      style={{ verticalAlign: "text-bottom" }}
+      style={{verticalAlign: "text-bottom"}}
     >
       <g transform="matrix(1 0 0 -1 0 801)">
         <path
@@ -475,7 +490,7 @@ export function RareItemIcon() {
       stroke="#000000"
       // strokeWidth={100}
       paintOrder="stroke markers fill"
-      style={{ verticalAlign: "text-bottom" }}
+      style={{verticalAlign: "text-bottom"}}
     >
       <g transform="matrix(1.33 0 0 1.33 104.757 57.577)">
         <path
