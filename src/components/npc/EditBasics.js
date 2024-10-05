@@ -26,8 +26,8 @@ export default function EditBasics({ npc, setNpc }) {
   const { t } = useTranslate();
   const theme = useCustomTheme();
   const background = theme.mode === 'dark'
-  ? `linear-gradient(to right, ${theme.primary}, ${theme.quaternary})`
-  : `linear-gradient(to right, ${theme.ternary}, transparent)`;
+    ? `linear-gradient(to right, ${theme.primary}, ${theme.quaternary})`
+    : `linear-gradient(to right, ${theme.ternary}, transparent)`;
 
   const [imgUrlTemp, setImgUrlTemp] = React.useState(npc.imgurl || "");
 
@@ -54,20 +54,28 @@ export default function EditBasics({ npc, setNpc }) {
       const value = e.target.value;
       setNpc((prevNpc) => {
         let affinities = {};
+        let immunities = {}
 
         if (value === "Construct") {
           affinities = { poison: "im", earth: "rs" };
+          immunities = { poisoned: true };
         } else if (value === "Elemental") {
           affinities = { poison: "im" };
+          immunities = { poisoned: true };
+        } else if (value === "Plant") {
+          immunities = { dazed: true, shaken: true, enraged: true, };
         } else if (value === "Undead") {
           affinities = { dark: "im", poison: "im", light: "vu" };
+          immunities = { poisoned: true };
         }
 
-        return {
+        const updatedNpc = {
           ...prevNpc,
           species: value,
           affinities: affinities,
+          immunities: immunities,
         };
+        return updatedNpc;
       });
     },
     [setNpc]

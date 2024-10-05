@@ -11,13 +11,18 @@ export default function EditPlayerStatuses({ player, setPlayer, isEditMode }) {
   const secondary = theme.palette.secondary.main;
 
   const handleStatusChange = (status) => {
-    setPlayer((prevPlayer) => ({
-      ...prevPlayer,
-      statuses: {
-        ...prevPlayer.statuses,
-        [status]: !prevPlayer.statuses[status],
-      },
-    }));
+    setPlayer((prevPlayer) => {
+      // Check if the current status corresponds to an immunity
+      const isImmune = player.immunities && player.immunities[status] === true;
+
+      return {
+        ...prevPlayer,
+        statuses: {
+          ...prevPlayer.statuses,
+          [status]: isImmune ? false : !prevPlayer.statuses[status],
+        },
+      };
+    });
   };
 
   const statusDescriptions = {
@@ -51,29 +56,34 @@ export default function EditPlayerStatuses({ player, setPlayer, isEditMode }) {
         />
       </Grid>
       <Grid container spacing={1}>
-        {Object.keys(statusDescriptions).map((status) => (
-          <Grid item xs={12} md={6} key={status}>
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={player.statuses[status]}
-                  onChange={() => handleStatusChange(status)}
-                  disabled={!isEditMode}
-                />
-              }
-              label={t(status.charAt(0).toUpperCase() + status.slice(1))}
-              sx={{ marginRight: 2 }}
-            />
-            <Typography variant="body2" component="span" sx={{fontSize: "0.8em"}}>
-              <ReactMarkdown
-                allowedElements={["strong"]}
-                unwrapDisallowed={true}
-              >
-                {t(statusDescriptions[status])}
-              </ReactMarkdown>
-            </Typography>
-          </Grid>
-        ))}
+        {Object.keys(statusDescriptions).map((status) => {
+          // Check if the immunity for the current status is true
+          const isImmune = player.immunities && player.immunities[status] === true;
+
+          return (
+            <Grid item xs={12} md={6} key={status}>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={player.statuses[status]}
+                    onChange={() => handleStatusChange(status)}
+                    disabled={!isEditMode || isImmune}
+                  />
+                }
+                label={t(status.charAt(0).toUpperCase() + status.slice(1))}
+                sx={{ marginRight: 2 }}
+              />
+              <Typography variant="body2" component="span" sx={{ fontSize: "0.8em" }}>
+                <ReactMarkdown
+                  allowedElements={["strong"]}
+                  unwrapDisallowed={true}
+                >
+                  {t(statusDescriptions[status])}
+                </ReactMarkdown>
+              </Typography>
+            </Grid>
+          );
+        })}
       </Grid>
     </Paper>
   );
